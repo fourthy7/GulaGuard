@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Gula - GulaGuard</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../Script/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo-container">
+            <a href="../index.html">
+                <img src="../Pic/2.png" alt="GulaGuard Logo" class="logo-img">
+            </a>
+        </div>
+
+        <button class="hamburger" aria-label="Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <nav class="nav">
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link nav-link--beranda">Beranda</a></li>
+                <li><a href="#" class="nav-link nav-link--kalkulator active">Kalkulator Gula</a></li>
+                <li><a href="quiz.html" class="nav-link nav-link--quiz">Quiz</a></li>
+                <li><a href="infografis.html" class="nav-link nav-link--infografis">Infografis</a></li>
+                <li><a href="artikel.html" class="nav-link nav-link--artikel">Artikel</a></li>
+                <li><a href="komunitas.html" class="nav-link nav-link--komunitas">Komunitas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="calc-page">
+        <div class="container">
+            <div class="calc-header-row">
+                <div class="calc-title-area">
+                    <h1>🔍 Hitung Asupan <br><span class="text-highlight">Gulamu Hari Ini!</span></h1>
+                    <p>Cek seberapa banyak gula yang kamu konsumsi dari minuman dan makanan favoritmu. Biar tetap manis, tapi nggak kebablasan! 😋</p>
+                </div>
+                <div class="calc-hero-img">
+                    <img src="../Pic/8.2.png" alt="Ilustrasi Minum Boba">
+                </div>
+            </div>
+
+            <div class="calc-grid">
+    
+                <div class="calc-card card-input">
+                    <div class="card-header-green">
+                        <i class="fas fa-edit"></i> Masukkan Konsumsi Harianmu
+                    </div>
+                    <div class="card-body">
+                        <form class="sugar-form">
+                            <label class="form-label">1. Pilih Minuman</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-coffee input-icon"></i>
+                                <select class="custom-select" id="drinkSelect">
+                                    <option value="54">🧋 Boba Milk Tea (54g)</option>
+                                    <option value="25">🍵 Teh Manis (25g)</option>
+                                    <option value="12">🥛 Susu Kemasan (12g)</option>
+                                    <option value="39">🥤 Minuman Bersoda (39g)</option>
+                                    <option value="35">☕ Kopi Susu Gula Aren (35g)</option>
+                                    <option value="22">🧃 Jus Buah Kotak (22g)</option>
+                                    <option value="28">⚡ Minuman Energi (28g)</option>
+                                </select>
+                            </div>
+            
+                            <label class="form-label">2. Jumlah Gelas / Porsi</label>
+                            <div class="counter-wrapper">
+                                <button type="button" class="btn-counter" id="btnMinus">-</button>
+                                <input type="number" value="1" class="input-counter" id="qtyInput" readonly>
+                                <button type="button" class="btn-counter" id="btnPlus">+</button>
+                            </div>
+            
+                            <label class="form-label">3. Level Gula (Perkiraan)</label>
+                            <div class="sugar-level-options">
+                                <button type="button" class="lvl-btn" onclick="setLevel(0, this)"><i class="fas fa-times"></i> Tidak</button>
+                                <button type="button" class="lvl-btn" onclick="setLevel(0.5, this)"><i class="fas fa-check"></i> Sedikit</button>
+                                <button type="button" class="lvl-btn active" onclick="setLevel(1, this)"><i class="fas fa-exclamation-triangle"></i> Normal/Banyak</button>
+                            </div>
+            
+                            <button type="button" class="cta-button btn-full btn-orange-shadow" onclick="hitungGula()">✨ Hitung Gulaku</button>
+                        </form>
+                    </div>
+                </div>
+            
+                <div class="calc-sidebar">
+                    
+                    <div class="info-card bg-yellow" id="resultCard">
+                        <div class="info-header">
+                            <i class="fas fa-bottle-droplet"></i> Hasil Asupan Gulamu
+                        </div>
+                        <div class="result-box">
+                            <p class="result-text">Total gula hari ini: <span class="text-danger" id="totalSugarText">0 gram</span></p>
+                            <div class="limit-info">
+                                <small>Batas aman WHO < 26 gram/hari</small>
+                                <div class="badge-danger" id="statusBadge">Klik Hitung Dulu ya! 👇</div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="info-card bg-purple">
+                        <div class="info-header">
+                            <i class="fas fa-lightbulb"></i> Tahukah Kamu?
+                        </div>
+                        <p class="fact-text" id="factText">Gula berlebih tidak hanya bikin diabetes, tapi juga mempercepat penuaan dini dan jerawat lho, Bestie! 😱</p>
+                        <ul class="tips-list">
+                            <li>✨ Pilih less sugar / no sugar</li>
+                            <li>✨ Ganti minuman manis dengan air</li>
+                        </ul>
+                    </div>
+            
+                    <div class="info-card bg-blue">
+                        <div class="info-header">
+                            <i class="fas fa-user-astronaut"></i> Masih Mau Cek Lebih Jauh?
+                        </div>
+                        <ul class="link-list">
+                            <li><a href="#"><i class="fas fa-gamepad"></i> Ikuti Quiz: Seberapa Manis Hidupmu?</a></li>
+                            <li><a href="#"><i class="fas fa-book-open"></i> Baca Artikel Gula & Diabetes</a></li>
+                            <li><a href="#"><i class="fas fa-users"></i> Gabung Komunitas Gen Z Sehat</a></li>
+                        </ul>
+                    </div>
+            
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="logo-footer">
+            <img src="../Pic/2.png" alt="GulaGuard Logo" alt="GulaGuard Logo">
+        </div>
+        <p class="copyright">Cek gula, <b>cegah diabetes</b>, biar badan tetap sehat.</p>
+    </footer>
+
+    <script src="../Script/main.js"></script>
+</body>
+</html>
