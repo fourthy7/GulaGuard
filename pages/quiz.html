@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Gula - GulaGuard</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../script/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo-container">
+            <a href="../index.html">
+                <img src="../pic/2.png" alt="GulaGuard Logo" class="logo-img">
+            </a>
+        </div>
+        
+        <button class="hamburger" aria-label="Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <nav class="nav">
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link nav-link--beranda">Beranda</a></li>
+                <li><a href="kalkulator.html" class="nav-link nav-link--kalkulator">Kalkulator Gula</a></li>
+                <li><a href="#" class="nav-link nav-link--quiz active">Quiz</a></li>
+                <li><a href="infografis.html" class="nav-link nav-link--infografis">Infografis</a></li>
+                <li><a href="artikel.html" class="nav-link nav-link--artikel">Artikel</a></li>
+                <li><a href="komunitas.html" class="nav-link nav-link--komunitas">Komunitas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="quiz-page">
+        <div class="container">
+            
+            <div class="calc-header-row quiz-header">
+                <div class="calc-title-area">
+                    <h1>🎯 Quiz: Seberapa <br><span class="text-highlight">Manis Hidupmu?</span></h1>
+                    <p>Ikuti quiz seru ini untuk tahu seberapa banyak konsumsi gula dalam keseharianmu. Ayo cek sampai seberapa "manis" kebiasaan hidupmu selama ini! 🤔</p>
+                    <a href="#start-quiz" class="cta-button btn-orange-shadow mt-2">Mulai Quiz! 🚀</a>
+                </div>
+                <div class="calc-hero-img">
+                    <img src="../pic/12.png" alt="Ilustrasi Quiz">
+                </div>
+            </div>
+
+            <div class="quiz-grid" id="start-quiz">
+                
+                <div class="quiz-card card-orange-soft">
+                    <div class="card-header-simple">
+                        <i class="fas fa-question-circle"></i> Contoh Pertanyaan dalam Quiz
+                    </div>
+                    <div class="quiz-body">
+                        <ul class="quiz-preview-list">
+                            <li>
+                                <span class="icon">🧋</span>
+                                <span class="text">Biasanya kamu pesan <strong>minuman manis berapa kali</strong> dalam seminggu?</span>
+                            </li>
+                            <li>
+                                <span class="icon">🍰</span>
+                                <span class="text">Seberapa sering kamu <strong>ngemil makanan tinggi gula?</strong></span>
+                            </li>
+                            <li>
+                                <span class="icon">🍫</span>
+                                <span class="text">Snack favoritmu kayak apa? Coklat, keripik, atau buah?</span>
+                            </li>
+                        </ul>
+                        <button class="cta-button btn-full mt-auto">Mulai Quiz Sekarang</button>
+                    </div>
+                </div>
+
+                <div class="quiz-card card-purple-soft">
+                    <div class="card-header-simple text-purple">
+                        <i class="fas fa-star"></i> Mulai Quiz, Dapatkan Hasilnya!
+                    </div>
+                    <div class="quiz-body">
+                        <ul class="quiz-benefit-list">
+                            <li>📊 Rating "seberapa manis" gaya hidupmu</li>
+                            <li>💡 Tips mengurangi konsumsi gula berlebih</li>
+                            <li>📑 Rekomendasi artikel dan tips sehat lainnya</li>
+                        </ul>
+                        
+                        <div class="rating-visual">
+                            <div class="rating-container">
+                                <div class="rate-item item-sehat">
+                                    <img src="../pic/9.png" alt="Sehat" class="rate-img">
+                                    <span class="rate-label">✅ Sehat!</span>
+                                </div>
+                        
+                                <div class="rate-item item-lumayan">
+                                    <img src="../pic/10.png" alt="Lumayan" class="rate-img">
+                                    <span class="rate-label">⚠️ Lumayan</span>
+                                </div>
+                        
+                                <div class="rate-item item-bahaya">
+                                    <img src="../pic/11.png" alt="Bahaya" class="rate-img">
+                                    <span class="rate-label">🚨 Bahaya!</span>
+                                </div>
+                            </div>
+                            <p class="rating-caption">Cek hasilmu nanti di sini!</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="logo-footer">
+            <img src="../Pic/2.png" alt="GulaGuard Logo">
+        </div>
+        <p class="copyright">Cek gula, <b>cegah diabetes</b>, biar badan tetap sehat.</p>
+    </footer>
+
+    <script src="../script/main.js"></script>
+</body>
+</html>

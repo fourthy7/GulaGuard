@@ -1,0 +1,2160 @@
+/* =========================================
+   STYLE.CSS - GulaGuard (FINAL FIXED VERSION)
+   ========================================= */
+
+/* --- VARIABLES & DESIGN SYSTEM --- */
+:root {
+    --primary-color: #98E2C6;  /* Hijau Mint */
+    --secondary-color: #AEE2FF; /* Biru Muda */
+    --accent-orange: #FFAB91;   /* Oranye Lembut */
+    --accent-purple: #D7BDE2;   /* Ungu Pastel */
+    --bg-cream: #F9F6F0;        /* Krem/Beige Background */
+    --text-dark: #333333;
+    --text-light: #FFFFFF;
+    --font-stack: 'Poppins', sans-serif;
+    --transition: all 0.3s ease;
+}
+
+/* --- RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+    overflow-x: hidden; /* Mencegah scroll horizontal */
+}
+
+a { text-decoration: none; }
+ul { list-style: none; }
+
+/* --- HEADER --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    position: relative;
+    z-index: 100; /* Selalu di atas elemen lain */
+    background: transparent;
+}
+
+.logo-container {
+    flex-shrink: 0;
+}
+
+.logo-img {
+    height: 60px; /* Default Mobile: Kecil agar header rapi */
+    width: auto;
+    transition: var(--transition);
+}
+
+/* --- HAMBURGER MENU (MOBILE) --- */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--text-dark);
+    transition: var(--transition);
+    border-radius: 3px;
+}
+
+/* --- NAVIGATION MENU --- */
+.nav-menu {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-link {
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    display: block;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.nav-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+/* Warna Pastel Tombol Navigasi */
+.nav-link--beranda { background-color: var(--primary-color); color: var(--text-dark); }
+.nav-link--kalkulator { background-color: #FFE082; color: var(--text-dark); }
+.nav-link--quiz { background-color: #FFCCBC; color: var(--text-dark); }
+.nav-link--infografis { background-color: var(--accent-purple); color: var(--text-dark); }
+.nav-link--artikel { background-color: #C5E1A5; color: var(--text-dark); }
+.nav-link--komunitas { background-color: var(--secondary-color); color: var(--text-dark); }
+
+/* --- HERO SECTION --- */
+.hero {
+    display: flex;
+    flex-direction: column-reverse; /* Mobile: Gambar Bawah, Teks Atas */
+    align-items: center;
+    padding: 120px 5% 4rem;
+    
+    /* Mobile Gradient: Vertikal (Atas ke Bawah) */
+    background: linear-gradient(180deg, #E0F7FA 0%, #F9F6F0 100%);
+    
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    margin-top: -100px; /* Menarik hero ke atas header */
+    text-align: center;
+}
+
+.hero-content {
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.hero-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: var(--text-dark);
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--accent-orange);
+    color: var(--text-light);
+    font-weight: 700;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(255, 171, 145, 0.4);
+    transition: var(--transition);
+}
+
+.cta-button:hover {
+    background-color: #FF8A65;
+    transform: translateY(-3px);
+}
+
+.hero-image-container {
+    width: 100%;
+    max-width: 450px; /* Batasi lebar gambar di mobile */
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    mix-blend-mode: multiply; 
+    display: block;
+}
+
+/* =========================================
+   FEATURES SECTION
+   ========================================= */
+.features {
+    padding: 4rem 5%;
+    background-color: #FFFFFF;
+    text-align: center;
+}
+
+.section-header {
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.text-highlight {
+    color: #8E44AD; /* Ungu tua untuk aksen */
+}
+
+.section-subtitle {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* --- GRID LAYOUT --- */
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default Mobile: 1 kolom */
+    gap: 2rem;
+}
+
+/* --- CARD STYLES --- */
+.feature-card {
+    padding: 2rem;
+    border-radius: 30px;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Warna-warni Card Background */
+.card-green { background-color: #E0F2F1; border: 2px solid #B2DFDB; }
+.card-yellow { background-color: #FFF8E1; border: 2px solid #FFE082; }
+.card-purple { background-color: #F3E5F5; border: 2px solid #E1BEE7; }
+
+.feature-img {
+    height: 120px;
+    width: auto;
+    margin-bottom: 1.5rem;
+    mix-blend-mode: multiply; 
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.feature-card p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+/* --- BUTTONS DI CARD --- */
+.feature-btn {
+    margin-top: auto;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    color: white;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.feature-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.btn-orange { background-color: var(--accent-orange); }
+.btn-yellow { background-color: #FFB74D; }
+
+/* =========================================
+   CONTACT & FOOTER (FIXED IMAGES)
+   ========================================= */
+.contact-section {
+    padding: 4rem 5% 6rem;
+    background: linear-gradient(180deg, #FFFFFF 0%, #E0F7FA 100%);
+}
+
+.contact-grid {
+    align-items: stretch;
+}
+
+.contact-card {
+    padding: 2rem;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden; /* Mencegah gambar keluar dari border */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Warna Background Kartu Spesifik */
+.card-yellow-bg { background-color: #FFF3E0; border: 2px solid #FFE0B2; }
+.card-green-bg { background-color: #E0F2F1; border: 2px solid #B2DFDB; text-align: center;}
+.card-purple-bg { background-color: #F3E5F5; border: 2px solid #E1BEE7; }
+
+/* --- TEKS & KONTEN (Agar di atas gambar) --- */
+.contact-card h3,
+.contact-card p,
+.social-list,
+.newsletter-form,
+.contact-icon-top {
+    position: relative;
+    z-index: 5; /* Layer di atas gambar ilustrasi */
+}
+
+/* Cari bagian ini dan update */
+.contact-card {
+    padding: 2rem;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    /* TAMBAHKAN 2 BARIS INI: */
+    align-items: center; /* Memusatkan item secara horizontal di flex container */
+    text-align: center;  /* Memusatkan teks */
+    /* --------------------- */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+
+.text-green { color: #009688; }
+
+/* --- GAMBAR & ILUSTRASI \
+
+/* =========================================
+   UPDATE FINAL: GAMBAR MENEMPEL TEPI (SESUAI REQUEST)
+   ========================================= */
+
+/* 1. RESET KARTU AGAR MUAT GAMBAR BESAR */
+.contact-card {
+    position: relative;
+    overflow: hidden;
+    /* UPDATE 1: Tinggi minimal dikurangi agar tidak terlalu jangkung */
+    min-height: 150px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    border-radius: 30px;
+}
+
+/* --- ATURAN KHUSUS PER KARTU (PENTING) --- */
+
+/* Kartu Kiri & Kanan (Gambar di Bawah) */
+.card-yellow-bg, .card-purple-bg {
+    /* UPDATE 2: Padding bawah dikurangi dari 280px jadi 220px */
+    /* Ini membiarkan teks turun lebih dekat ke gambar */
+    padding: 1rem 2rem 20px 2rem; 
+    
+    justify-content: flex-start;
+}
+
+/* Kartu Tengah (Gambar di Atas) */
+.card-green-bg {
+    /* Sesuaikan juga agar seimbang */
+    padding: 150px 2rem 3rem 2rem; 
+    justify-content: flex-start;
+}
+
+/* --- POSISI GAMBAR MENEMPEL --- */
+
+/* GAMBAR 1 (KIRI) & GAMBAR 3 (KANAN) - MENEMPEL BAWAH */
+.contact-img-bottom,
+.contact-img-float {
+    position: absolute;  /* Kunci agar bisa menempel tepi */
+    bottom: 0;           /* Tempel ke paling bawah */
+    left: 50%;           /* Taruh di tengah horizontal */
+    transform: translateX(-50%); /* Teknik centering presisi */
+    
+    width: 100%;         /* Lebar Penuh sesuai garis hitam Anda */
+    max-width: 350px;    /* Batas agar tidak terlalu raksasa di layar lebar */
+    height: auto;
+    
+    margin: 0;           /* Hapus margin lama */
+    z-index: 1;          /* Posisi di belakang teks */
+    mix-blend-mode: multiply;
+}
+
+/* GAMBAR 2 (TENGAH/ICON) - MENEMPEL ATAS */
+.contact-icon-top {
+    position: absolute;  /* Kunci agar bisa menempel tepi */
+    top: 0;              /* Tempel ke paling atas */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    width: 210px;        /* Diperbesar agar jelas */
+    height: auto;
+    margin-top: 30px;    /* Beri sedikit jarak dari bibir atas */
+    z-index: 1;
+    mix-blend-mode: multiply;
+}
+
+/* --- PASTIKAN TEKS AMAN --- */
+.contact-card h3, 
+.contact-card p, 
+.newsletter-form,
+.social-list {
+    position: relative;
+    z-index: 10; /* Layer teks di atas gambar */
+    width: 100%;
+}
+
+/* --- RESPONSIVE (MOBILE) --- */
+@media (max-width: 991px) {
+    .contact-card {
+        min-height: auto; /* Reset tinggi di HP */
+        padding: 2rem !important; /* Reset padding biar normal di HP */
+    }
+    
+    /* Kembalikan gambar jadi normal di HP (tidak menempel aneh) */
+    .contact-img-bottom, 
+    .contact-img-float,
+    .contact-icon-top {
+        position: relative; 
+        width: 200px;
+        bottom: auto; top: auto; left: auto;
+        transform: none;
+        margin-top: 2rem;
+    }
+}
+
+/* --- FORM NEWSLETTER --- */
+.newsletter-form {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.newsletter-form input {
+    width: 100%;
+    padding: 12px 15px 12px 40px;
+    border: 2px solid #B2DFDB;
+    border-radius: 15px;
+    outline: none;
+    font-family: var(--font-stack);
+}
+
+.newsletter-form input:focus {
+    border-color: var(--primary-color);
+}
+
+.btn-full {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+/* --- SOCIAL MEDIA LIST --- */
+.social-list {
+    margin-top: 1rem;
+}
+
+.social-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.social-icon {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    width: 25px;
+    text-align: center;
+}
+
+.inst-color { color: #E1306C; }
+.twit-color { color: #1DA1F2; }
+.face-color { color: #1877F2; }
+.wa-color   { color: #25D366; }
+
+/* --- FOOTER BOTTOM BAR --- */
+.main-footer {
+    text-align: center;
+    padding: 2rem 5%;
+    background-color: white;
+    border-top: 1px solid #eee;
+}
+
+.logo-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.logo-footer img {
+    height: 100px;
+}
+
+.brand-name {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+}
+
+.copyright {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+
+/* =========================================
+   MEDIA QUERIES (RESPONSIVE RULES)
+   ========================================= */
+
+/* --- LAYAR MENENGAH (Laptop Kecil/Tablet) --- */
+@media (max-width: 1200px) {
+    /* Sesuaikan ukuran gambar agar tidak menutupi teks */
+    .contact-img-bottom {
+        width: 220px;
+    }
+    .contact-img-float {
+        width: 180px;
+    }
+}
+
+/* --- MOBILE & TABLET PORTRAIT (Max Width 991px) --- */
+@media (max-width: 991px) {
+    /* 1. Header & Navigasi Mobile */
+    .hamburger { display: block; }
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.98);
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s ease-in-out;
+        z-index: 99;
+        padding-top: 60px;
+    }
+
+    .nav-menu.active { left: 0; }
+    .nav-link { width: 80vw; margin: 5px 0; }
+
+    /* 2. Reset Layout Fitur & Kontak */
+    .features-grid, .contact-grid {
+        grid-template-columns: 1fr; /* Stack ke bawah */
+    }
+
+    /* 3. Reset Gambar Kontak di Mobile (Supaya rapi) */
+    .contact-card {
+        align-items: center;
+        text-align: center;
+        padding-bottom: 0; /* Reset padding bawah */
+    }
+
+    .social-list li { justify-content: center; }
+
+    .contact-img-bottom {
+        position: relative; /* Matikan absolute */
+        bottom: auto; left: auto;
+        width: 180px; /* Ukuran pas HP */
+        margin-top: 20px;
+        margin-bottom: -10px;
+    }
+
+    .contact-img-float {
+        position: relative; /* Matikan absolute */
+        bottom: auto; right: auto;
+        width: 150px; /* Ukuran pas HP */
+        margin-top: 20px;
+        transform: rotate(0deg);
+        margin-bottom: -10px;
+    }
+}
+
+/* --- DESKTOP (Min Width 992px) --- */
+@media (min-width: 992px) {
+    .logo-img { height: 150px; }
+    .header { padding: 1rem 8%; }
+    
+    .hero {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        padding: 240px 8% 6rem;
+        margin-top: -200px;
+        background: linear-gradient(135deg, #E0F7FA 0%, #F1F8E9 100%);
+    }
+
+    .hero-content {
+        margin-top: 0;
+        max-width: 50%;
+        padding-right: 3rem;
+    }
+
+    .hero-title { font-size: 3.5rem; }
+    .hero-subtitle { font-size: 1.2rem; }
+    
+    .hero-image-container {
+        max-width: 45%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .features-grid { grid-template-columns: repeat(3, 1fr); }
+    .contact-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+}
+
+/* =========================================
+   HALAMAN KALKULATOR GULA (NEW)
+   ========================================= */
+
+   .calc-page {
+    padding: 140px 5% 4rem; /* Padding atas besar karena header fixed/absolute */
+    background: linear-gradient(180deg, #FFFFFF 0%, #F1F8E9 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* --- HEADER AREA --- */
+.calc-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 2rem; /* Tambahkan gap agar tidak terlalu mepet jika layar mengecil */
+}
+
+.calc-title-area {
+    flex: 1;
+    min-width: 300px; /* Pastikan teks tidak terlalu gepeng */
+}
+
+.calc-title-area h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+/* UPDATE BAGIAN INI: PERBESAR GAMBAR */
+.calc-hero-img img {
+    /* Ubah width dari 300px menjadi 600px (atau sesuai selera) */
+    width: 600px; 
+    max-width: 100%; /* Agar tidak keluar layar di perangkat yang lebih kecil dari 600px */
+    height: auto;    /* Tinggi menyesuaikan proporsi */
+    mix-blend-mode: multiply;
+}
+
+
+/* --- GRID LAYOUT --- */
+.calc-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Kiri lebih lebar sedikit dari kanan */
+    gap: 2rem;
+    align-items: start;
+}
+
+/* --- KARTU INPUT (KIRI) --- */
+.calc-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    border: 2px solid #C8E6C9; /* Border hijau tipis */
+}
+
+.card-header-green {
+    background-color: #E8F5E9;
+    padding: 1rem 1.5rem;
+    font-weight: 700;
+    color: #2E7D32;
+    border-bottom: 1px solid #C8E6C9;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    color: #555;
+}
+
+.form-label:first-child { margin-top: 0; }
+
+/* Custom Select */
+.input-wrapper {
+    position: relative;
+}
+.input-wrapper .input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    z-index: 1;
+}
+.custom-select {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    appearance: none; /* Hapus panah default browser */
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="gray" viewBox="0 0 16 16"><path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>') no-repeat right 15px center;
+    background-color: white;
+    font-family: var(--font-stack);
+    cursor: pointer;
+}
+
+/* Counter (+ -) */
+.counter-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.btn-counter {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: #E0F2F1;
+    color: #00695C;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.btn-counter:hover { background-color: #B2DFDB; }
+.input-counter {
+    width: 60px;
+    text-align: center;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    padding: 8px;
+    font-weight: bold;
+}
+
+/* Sugar Level Buttons */
+.sugar-level-options {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+.lvl-btn {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #eee;
+    background: white;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #666;
+    transition: var(--transition);
+}
+.lvl-btn:hover { border-color: var(--primary-color); }
+
+.lvl-btn.active {
+    background-color: #FFF3E0;
+    border-color: #FFB74D;
+    color: #E65100;
+}
+
+.btn-orange-shadow {
+    box-shadow: 0 4px 0 #E64A19; /* Efek tombol 3D */
+}
+.btn-orange-shadow:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+/* --- SIDEBAR KANAN (INFO) --- */
+.calc-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-card {
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.bg-yellow { background-color: #FFFDE7; border: 2px solid #FFF59D; }
+.bg-purple { background-color: #F3E5F5; border: 2px solid #E1BEE7; }
+.bg-blue   { background-color: #E3F2FD; border: 2px solid #BBDEFB; }
+
+.info-header {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.result-text { font-size: 1.1rem; margin-bottom: 0.5rem; }
+.text-danger { color: #D32F2F; font-weight: 800; }
+
+.badge-danger {
+    display: inline-block;
+    background-color: #FFEBEE;
+    color: #D32F2F;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.tips-list, .link-list {
+    padding-left: 0;
+    margin-top: 0.5rem;
+}
+.tips-list li {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #555;
+}
+.link-list li {
+    margin-bottom: 8px;
+}
+.link-list a {
+    color: #1976D2;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.link-list a:hover { text-decoration: underline; }
+
+/* --- CSS TAMBAHAN UNTUK HASIL DINAMIS --- */
+
+/* Warna Background Kartu Hasil */
+.bg-green { background-color: #E8F5E9; border: 2px solid #A5D6A7; }
+/* .bg-yellow (Sudah ada sebelumnya) */
+/* .bg-blue (Sudah ada sebelumnya) */
+
+/* Badge Styles */
+.badge-success {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-top: 5px;
+}
+/* .badge-danger (Sudah ada sebelumnya) */
+
+/* --- RESPONSIVE KALKULATOR --- */
+@media (max-width: 991px) {
+    .calc-header-row {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    
+    .calc-grid {
+        grid-template-columns: 1fr; /* Stack jadi 1 kolom di HP */
+    }
+    
+    .calc-hero-img img {
+        width: 200px;
+        margin-bottom: 1rem;
+    }
+    
+    .calc-page {
+        padding-top: 100px;
+    }
+}
+
+/* =========================================
+   HALAMAN QUIZ (NEW)
+   ========================================= */
+
+   .quiz-page {
+    padding: 140px 5% 4rem;
+    /* Background gradasi sedikit berbeda biar fresh (sedikit peach) */
+    background: linear-gradient(180deg, #FFF3E0 0%, #FFFFFF 100%);
+    min-height: 100vh;
+}
+
+.mt-2 { margin-top: 1.5rem; }
+.mt-auto { margin-top: auto; }
+
+/* --- GRID QUIZ --- */
+.quiz-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 Kolom Seimbang */
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* --- KARTU QUIZ --- */
+.quiz-card {
+    border-radius: 30px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+
+.quiz-card:hover { transform: translateY(-5px); }
+
+/* Warna Spesifik Kartu */
+.card-orange-soft {
+    background-color: #FFF8E1; /* Kuning/Oren sangat muda */
+    border: 2px solid #FFE082;
+}
+
+.card-purple-soft {
+    background-color: #F3E5F5; /* Ungu sangat muda */
+    border: 2px solid #E1BEE7;
+}
+
+.card-header-simple {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: #E65100; /* Warna oren tua */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.text-purple { color: #8E24AA; } /* Ubah header kanan jadi ungu */
+
+.quiz-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Isi sisa ruang agar tinggi kartu sama */
+}
+
+/* List Pertanyaan (Kiri) */
+.quiz-preview-list {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.quiz-preview-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 1.2rem;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.quiz-preview-list .icon { font-size: 1.5rem; }
+.quiz-preview-list .text { font-size: 0.95rem; color: #555; line-height: 1.5; }
+
+/* List Benefit (Kanan) */
+.quiz-benefit-list {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.quiz-benefit-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #555;
+}
+
+/* Bullet point custom emoji */
+.quiz-benefit-list li::before {
+    content: '👉'; 
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Visual Rating di Kanan Bawah */
+.rating-visual {
+    margin-top: auto;
+    text-align: center;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 20px;
+}
+
+.rating-visual img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.rating-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #777;
+    padding: 0 10px;
+}
+
+/* --- RESPONSIVE QUIZ --- */
+@media (max-width: 991px) {
+    .quiz-grid {
+        grid-template-columns: 1fr; /* Tumpuk di HP */
+    }
+    
+    .quiz-card {
+        padding: 1.5rem;
+    }
+}
+
+/* =========================================
+   ANIMASI RATING QUIZ (POP-UP)
+   ========================================= */
+
+   .rating-visual {
+    margin-top: auto;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.rating-container {
+    display: flex;
+    justify-content: space-around; /* Jarak merata antar item */
+    align-items: flex-end; /* Rata bawah agar rapi */
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.rate-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+    opacity: 0.5; /* Default: Sedikit transparan (mati) */
+    transform: scale(0.9); /* Default: Sedikit kecil */
+}
+
+.rate-img {
+    width: 60px; /* Ukuran gambar ikon */
+    height: auto;
+    margin-bottom: 8px;
+    mix-blend-mode: multiply;
+}
+
+.rate-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #888;
+}
+
+.rating-caption {
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* --- ANIMASI MENYALA BERGANTIAN (Looping) --- */
+/* Kita buat animasi agar user tahu ini fitur interaktif */
+
+@keyframes popUpHighlight {
+    0%, 100% { transform: scale(0.9); opacity: 0.5; filter: grayscale(100%); }
+    50% { transform: scale(1.2); opacity: 1; filter: grayscale(0%); }
+}
+
+/* Terapkan animasi dengan delay berbeda agar bergantian */
+.item-sehat {
+    animation: popUpHighlight 3s infinite;
+    animation-delay: 0s;
+}
+.item-sehat .rate-label { color: #2E7D32; } /* Warna Hijau saat nyala */
+
+.item-lumayan {
+    animation: popUpHighlight 3s infinite;
+    animation-delay: 1s; /* Muncul setelah sehat */
+}
+.item-lumayan .rate-label { color: #F57F17; } /* Warna Kuning saat nyala */
+
+.item-bahaya {
+    animation: popUpHighlight 3s infinite;
+    animation-delay: 2s; /* Muncul setelah lumayan */
+}
+.item-bahaya .rate-label { color: #C62828; } /* Warna Merah saat nyala */
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+    .rate-img { width: 50px; } /* Kecilkan sedikit di HP */
+}
+
+/* =========================================
+   HALAMAN INFOGRAFIS (SINGLE POSTER STYLE)
+   ========================================= */
+
+   .info-page {
+    padding: 140px 5% 6rem;
+    background-color: #FAFBFD; /* Putih kebiruan sangat muda */
+    min-height: 100vh;
+}
+
+.text-purple-dark { color: #5E35B1; }
+
+/* --- HERO SECTION --- */
+.info-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    gap: 2rem;
+}
+
+.info-text { flex: 1; }
+.info-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #004D40; /* Hijau Tua Gelap */
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+.info-desc {
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+.info-hero-img img {
+    width: 500px; /* SEBELUMNYA: 350px */
+    max-width: 100%; /* Tambahkan ini agar aman di layar kecil */
+    height: auto;
+    mix-blend-mode: multiply;
+}
+
+/* --- GRID BOARD LAYOUT --- */
+.info-board {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 Kolom Default */
+    gap: 1.5rem;
+}
+
+.full-width {
+    grid-column: 1 / -1; /* Rentang dari awal sampai akhir (lebar penuh) */
+}
+
+/* --- GENERIC CARD STYLE --- */
+.info-card {
+    border-radius: 25px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    transition: var(--transition);
+}
+.info-card:hover { transform: translateY(-3px); }
+
+/* 1. CARD WARNING (KUNING) */
+.card-warning {
+    background-color: #FFF8E1;
+    border: 2px solid #FFE082;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-warning h3 {
+    color: #E65100;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+.custom-list li {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #5D4037;
+}
+.card-img-right {
+    text-align: center;
+    min-width: 300px; /* SEBELUMNYA: 200px (Wadah diperbesar) */
+}
+.card-img-right img {
+    width: 350px; /* SEBELUMNYA: 180px (Gambar diperbesar) */
+    mix-blend-mode: multiply;
+}
+
+.img-caption {
+    display: block;
+    font-size: 0.8rem;
+    color: #795548;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* 2. CARD DIET (KREM/ORANGE MUDA) */
+.card-diet {
+    background-color: #FFF3E0;
+    border: 2px solid #FFCC80;
+}
+.card-header-icon {
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: #BF360C;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 3. CARD ACTIVE (BIRU MUDA) */
+.card-active {
+    background-color: #E0F7FA;
+    border: 2px solid #80DEEA;
+}
+.card-active .card-header-icon {
+    color: #006064;
+}
+
+/* Isi Flex untuk Card Diet & Active */
+.card-body-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.text-side { flex: 1; }
+.text-side strong { display: block; margin-bottom: 10px; color: #333; }
+.dot-list, .arrow-list { padding-left: 20px; color: #444; }
+.img-side img {
+    width: 180px; /* SEBELUMNYA: 120px */
+    mix-blend-mode: multiply;
+    margin-left: 20px; /* Jarak sedikit diperlebar */
+}
+
+/* 4. CARD SUMMARY (BAWAH) */
+.card-summary {
+    background-color: #F1F8E9; /* Hijau Muda Sekali */
+    border: 2px solid #C5E1A5;
+    display: flex;
+    gap: 3rem;
+}
+
+.summary-left, .summary-right {
+    flex: 1;
+}
+
+.summary-left h4 { color: #33691E; margin-bottom: 1rem; font-size: 1.1rem; }
+.sugar-tip {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 15px;
+    border: 1px dashed #AED581;
+    margin-bottom: 0.5rem;
+}
+.sugar-tip img { width: 70px; }
+
+.summary-right h4 { color: #1B5E20; margin-bottom: 1rem; font-size: 1.1rem; }
+.summary-right ul { list-style: disc; padding-left: 20px; color: #33691E; }
+
+
+/* --- RESPONSIVE (MOBILE) --- */
+@media (max-width: 991px) {
+    /* ... aturan yang sudah ada sebelumnya ... */
+
+    /* TAMBAHKAN INI: Agar kartu Diet & Active menumpuk di HP */
+    .card-body-flex {
+        flex-direction: column; /* Teks atas, Gambar bawah */
+        align-items: center; /* Rata tengah */
+        text-align: center;
+    }
+    
+    .img-side {
+        margin-top: 1.5rem; /* Beri jarak antara teks dan gambar */
+    }
+    
+    .img-side img {
+        margin-left: 0; /* Reset margin kiri di HP */
+    }
+    
+    .sugar-tip {
+        flex-direction: column; /* Ikon gula menumpuk di bawah teks di HP */
+        text-align: center;
+    }
+}
+
+/* =========================================
+   HALAMAN ARTIKEL (NEW)
+   ========================================= */
+
+   .article-page {
+    padding: 140px 5% 6rem;
+    background-color: #FFF5F2; /* Latar belakang pink/krem sangat muda */
+    min-height: 100vh;
+}
+
+/* --- GRID ARTIKEL --- */
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Kolom di Desktop */
+    gap: 2rem;
+}
+
+/* --- KARTU ARTIKEL --- */
+.article-card {
+    background: white;
+    border-radius: 25px; /* Sudut membulat besar */
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: row; /* Gambar di kiri, Teks di kanan */
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    transition: var(--transition);
+    border: 1px solid #eee;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* --- UPDATE CSS UNTUK EMOJI ARTIKEL --- */
+
+.art-img-wrapper {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    /* Flexbox untuk menengahkan Emoji */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1.5rem; /* Jarak ke teks */
+}
+
+/* Mengatur Ukuran Emoji */
+.emoji-icon {
+    font-size: 2.5rem; /* Ukuran besar */
+    line-height: 1;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); /* Sedikit bayangan biar pop-up */
+}
+
+/* Variasi Warna Background Lingkaran (Biar warna-warni) */
+.bg-red-soft    { background-color: #FFEBEE; border: 1px solid #FFCDD2; }
+.bg-yellow-soft { background-color: #FFFDE7; border: 1px solid #FFF9C4; }
+.bg-green-soft  { background-color: #E8F5E9; border: 1px solid #C8E6C9; }
+.bg-purple-soft { background-color: #F3E5F5; border: 1px solid #E1BEE7; }
+.bg-blue-soft   { background-color: #E3F2FD; border: 1px solid #BBDEFB; }
+.bg-orange-soft { background-color: #FFF3E0; border: 1px solid #FFE0B2; }
+
+/* Responsive di HP */
+@media (max-width: 991px) {
+    .art-img-wrapper {
+        margin-right: 0; /* Reset margin di HP karena layout menumpuk */
+        margin-bottom: 1rem;
+        width: 90px;
+        height: 90px;
+    }
+    
+    .emoji-icon {
+        font-size: 3rem; /* Lebih besar sedikit di HP biar jelas */
+    }
+}
+
+/* --- UPDATE TOMBOL BACA SELENGKAPNYA (BUTTON STYLE) --- */
+
+.btn-read-more {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #E0F2F1; /* Hijau Mint Lembut */
+    color: #00695C; /* Teks Hijau Tua agar kontras */
+    border-radius: 50px; /* Bentuk Pill/Lonjong */
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none; /* Hilangkan garis bawah biru */
+    transition: all 0.3s ease;
+    margin-top: 1rem; /* Jarak dari teks paragraf */
+    border: 1px solid #B2DFDB; /* Border tipis biar rapi */
+}
+
+/* Efek Hover (Saat kursor diarahkan) */
+.btn-read-more:hover {
+    background-color: #4DB6AC; /* Berubah jadi hijau lebih pekat */
+    color: white; /* Teks jadi putih */
+    transform: translateY(-3px); /* Tombol naik sedikit */
+    box-shadow: 0 5px 15px rgba(77, 182, 172, 0.4); /* Bayangan hijau halus */
+    border-color: #4DB6AC;
+}
+
+/* Opsional: Agar tombol memenuhi lebar kartu di HP */
+@media (max-width: 991px) {
+    .btn-read-more {
+        display: block;
+        width: 100%;
+    }
+}
+
+/* =========================================
+   HALAMAN DETAIL ARTIKEL (NEW)
+   ========================================= */
+
+   .article-detail-page {
+    padding: 140px 5% 6rem;
+    background-color: #FAFAFA; /* Putih bersih */
+    min-height: 100vh;
+}
+
+/* Breadcrumb (Tombol Kembali) */
+.breadcrumb {
+    margin-bottom: 2rem;
+}
+.breadcrumb a {
+    color: #666;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+.breadcrumb a:hover { color: var(--accent-orange); }
+
+/* Judul Artikel */
+.article-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+.article-intro {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* --- DETAIL CONTENT GRID --- */
+/* =========================================
+   HALAMAN DETAIL ARTIKEL (REDESIGN UNIFIED)
+   ========================================= */
+
+   .article-detail-page {
+    padding: 140px 5% 6rem;
+    background-color: #FFFCF7; /* Latar belakang krem sangat muda, lebih hangat */
+    min-height: 100vh;
+}
+
+/* ... (Breadcrumb, Title, Intro biarkan sama) ... */
+.breadcrumb { margin-bottom: 2rem; }
+.breadcrumb a { color: #666; font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 8px; transition: var(--transition); }
+.breadcrumb a:hover { color: var(--accent-orange); }
+.article-title { font-size: 2.5rem; line-height: 1.2; margin-bottom: 1rem; color: var(--text-dark); }
+.article-intro { font-size: 1.1rem; color: #555; line-height: 1.6; }
+
+
+/* --- LAYOUT BARU YANG MENYATU --- */
+.unified-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.mt-4 { margin-top: 1.5rem; }
+
+/* STYLE KARTU UTAMA BESAR (FEATURE CARD) */
+.main-feature-card {
+    border-radius: 30px; /* Sudut lebih bulat */
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Bayangan lembut */
+    overflow: hidden;
+    position: relative;
+}
+
+.feature-text {
+    flex: 1; /* Mengisi ruang yang tersedia */
+    z-index: 2;
+}
+
+.feature-text h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    color: #4E342E; /* Coklat tua hangat */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.feature-text h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: #5D4037;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.feature-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #6D4C41;
+    margin-bottom: 1rem;
+}
+
+.icon-emoji { font-size: 2rem; }
+
+/* CONTAINER GAMBAR DI DALAM KARTU */
+.feature-img-container {
+    flex-shrink: 0; /* Jangan menyusut */
+    z-index: 1;
+}
+
+.feature-img-container img {
+    height: auto;
+    mix-blend-mode: multiply; /* Agar menyatu dengan background kartu */
+    display: block;
+}
+
+/* Khusus Gambar Atas (Diet) */
+.top-img img {
+    width: 350px; /* Ukuran sedang */
+    transform: rotate(2deg); /* Sedikit miring biar dinamis */
+}
+
+/* GRID BAWAH (Side Card + Big Image Card) */
+.bottom-unified-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr; /* Kiri kecil, Kanan besar */
+    gap: 2rem;
+    align-items: stretch;
+}
+
+/* KARTU SAMPING KECIL */
+.side-card {
+    padding: 2rem;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
+.side-card h3 { font-size: 1.2rem; margin-bottom: 1rem; color: #4527A0; display: flex; align-items: center; gap: 10px; }
+.side-card p { color: #5E35B1; line-height: 1.6; }
+
+
+/* KHUSUS KARTU GAMBAR BESAR BAWAH */
+.big-image-card {
+    /* Kita ubah layoutnya jadi teks di atas, gambar di bawah */
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 0; /* Hilangkan padding bawah agar gambar nempel */
+}
+
+.big-image-card .feature-text h2 {
+    justify-content: center; /* Judul rata tengah */
+    color: #1B5E20;
+}
+.big-image-card .feature-text p {
+    color: #2E7D32;
+}
+
+/* GAMBAR SANGAT BESAR (HUGE IMAGE) */
+.bottom-huge-img img {
+    width: 500px; /* UKURAN JUMBO SEPERTI PERMINTAAN */
+    max-width: 100%;
+    margin-top: 2rem;
+    margin-bottom: -40px; /* Agar sedikit terpotong di bawah memberi kesan depth */
+}
+
+
+/* WARNA KARTU BARU (PALET HANGAT/COZY) */
+.card-warm-yellow {
+    background: linear-gradient(135deg, #FFFDE7 0%, #FFF8E1 100%); /* Gradasi kuning krem lembut */
+    border: 2px solid #FFF176;
+}
+
+.card-soft-purple {
+    background-color: #F3E5F5;
+    border: 2px solid #E1BEE7;
+}
+
+.card-soft-green {
+    background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); /* Gradasi hijau lembut */
+    border: 2px solid #A5D6A7;
+}
+
+
+/* Footer Quote */
+.article-footer-quote {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/* --- RESPONSIVE (MOBILE) --- */
+@media (max-width: 991px) {
+    .main-feature-card {
+        flex-direction: column; /* Tumpuk teks di atas gambar */
+        padding: 2rem;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .feature-text h2, .feature-text h3 {
+        justify-content: center; /* Judul rata tengah di HP */
+    }
+
+    .top-img img {
+        width: 280px; /* Kecilkan gambar atas di HP */
+        transform: rotate(0);
+    }
+
+    .bottom-unified-grid {
+        grid-template-columns: 1fr; /* Tumpuk grid bawah di HP */
+    }
+
+    .side-card { text-align: center; }
+    .side-card h3 { justify-content: center; }
+
+    .bottom-huge-img img {
+        width: 350px; /* Kecilkan gambar bawah di HP tapi tetap cukup besar */
+        margin-bottom: -20px;
+    }
+}
+
+/* =========================================
+   HALAMAN KOMUNITAS (FIXED & POLISHED)
+   ========================================= */
+
+   .community-page {
+    padding: 140px 5% 6rem;
+    background: linear-gradient(180deg, #F9FBE7 0%, #FFFFFF 100%); /* Hijau Lime Muda Segar */
+    min-height: 100vh;
+}
+
+/* KARTU PEMBUNGKUS UTAMA */
+.community-card-wrapper {
+    background: white;
+    border-radius: 35px; /* Sudut lebih bulat modern */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08); /* Bayangan lebih halus & dalam */
+    overflow: hidden;
+    border: 1px solid #f0f0f0;
+    margin-top: 2rem;
+}
+
+/* --- GRID BAGIAN ATAS (BENEFIT & FORM) --- */
+.comm-grid-top {
+    display: grid;
+    /* Ubah rasio kolom agar Form punya ruang lebih luas */
+    grid-template-columns: 1.3fr 0.8fr 1.4fr; 
+    padding: 3.5rem;
+    gap: 3rem;
+    align-items: center;
+}
+
+/* Kolom Kiri: Benefit */
+.comm-benefit h3 {
+    font-size: 1.6rem;
+    color: #33691E; /* Hijau Tua */
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.benefit-list {
+    list-style: none;
+    padding: 0;
+}
+
+.benefit-list li {
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.5;
+    
+    /* Flexbox settings yang benar */
+    display: flex; 
+    align-items: flex-start; /* Sejajarkan emoji dengan baris pertama teks */
+    justify-content: flex-start; /* Paksa semua rapat ke KIRI */
+    gap: 15px; /* Jarak antara emoji dan teks */
+    text-align: left;
+}
+
+.benefit-list .emoji {
+    font-size: 1.4rem;
+    line-height: 1;
+    margin-top: 2px; /* Sedikit turun biar pas dengan huruf */
+    flex-shrink: 0;  /* Agar emoji tidak tergencet */
+    width: 30px;     /* Lebar tetap untuk kolom emoji */
+}
+
+/* Kolom Tengah: Dekorasi Gambar */
+.comm-deco-img {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.comm-deco-img img {
+    width: 100%;
+    max-width: 220px; /* Sedikit diperbesar */
+    height: auto;
+    mix-blend-mode: multiply;
+}
+
+/* Kolom Kanan: Form Area (YANG RUSAK KITA PERBAIKI DISINI) */
+.comm-form-area {
+    padding: 2.5rem;
+    border-radius: 25px;
+    background-color: #FFFDE7; /* Kuning sangat muda */
+    border: 2px solid #FFF59D; /* Border kuning */
+    box-shadow: 0 8px 20px rgba(255, 241, 118, 0.15);
+}
+
+.comm-form-area h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: #E65100; /* Oranye Tua */
+    text-align: center;
+    font-weight: 700;
+}
+
+.join-form .input-group {
+    position: relative;
+    margin-bottom: 1.5rem; /* Beri jarak antar input */
+}
+
+.join-form .input-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%); /* Pas di tengah vertikal */
+    color: #aaa;
+    font-size: 1.2rem;
+    z-index: 5; /* Pastikan icon di atas input */
+}
+
+.join-form input {
+    width: 100%;
+    height: 55px; /* Tinggi input diperbesar */
+    padding: 0 20px 0 55px; /* Padding kiri besar (55px) agar teks tidak nabrak icon */
+    border: 2px solid #E0E0E0;
+    border-radius: 15px;
+    font-family: var(--font-stack);
+    font-size: 1rem;
+    color: #333;
+    background: white;
+    outline: none; /* Hapus garis biru default browser */
+    box-sizing: border-box; /* Pastikan padding tidak menambah lebar total */
+}
+
+.join-form input::placeholder {
+    color: #bbb; /* Warna placeholder abu muda */
+    opacity: 1;
+}
+
+.join-form input:focus {
+    border-color: #FBC02D; /* Kuning saat diklik */
+    box-shadow: 0 0 0 4px rgba(251, 192, 45, 0.15);
+}
+
+.join-form input::placeholder {
+    color: #bbb;
+}
+
+.btn-full {
+    width: 100%;
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    padding: 14px;
+}
+
+/* --- GRID BAGIAN BAWAH (SOSMED & WA) --- */
+.comm-grid-bottom {
+    background-color: #E1F5FE; /* Biru muda segar */
+    padding: 2.5rem 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Penting agar gambar pojok tidak bocor */
+}
+
+/* Area Kiri (Sosmed) */
+.sosmed-links {
+    z-index: 2;
+}
+
+.sosmed-links h4, .wa-buttons h4 {
+    font-size: 1.1rem;
+    color: #0277BD;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+}
+
+.sosmed-badges {
+    display: flex;
+    gap: 12px;
+}
+
+/* Tombol Sosmed Pill */
+.badge-sosmed {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: white;
+    transition: var(--transition);
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.badge-sosmed i { font-size: 1.2rem; }
+
+.badge-sosmed:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.facebook { background-color: #1877F2; }
+.whatsapp { 
+    background-color: #25D366; 
+    padding: 12px 30px; /* Tombol WA lebih lebar dikit */
+    font-size: 1.05rem;
+}
+
+/* Area Kanan (WA & Gambar Pojok) */
+.contact-wa-area {
+    display: flex;
+    align-items: center;
+    gap: 3rem; /* Jarak antara tombol WA dan gambar */
+    z-index: 2;
+}
+
+.wa-buttons {
+    text-align: right; /* Teks "Butuh tanya" rata kanan */
+}
+
+/* Gambar Ilustrasi Pojok Kanan Bawah */
+.wa-illustration {
+    width: 220px; /* Ukuran pas */
+    position: absolute; /* Posisi absolute agar bisa nempel pojok */
+    right: -20px;
+    bottom: -40px; 
+    transform: rotate(-5deg); /* Sedikit miring biar fun */
+    mix-blend-mode: multiply;
+    z-index: 1; /* Di belakang tombol jika mepet */
+    pointer-events: none; /* Agar tidak menghalangi klik */
+}
+
+
+/* --- RESPONSIVE KOMUNITAS (MOBILE FIX) --- */
+@media (max-width: 1200px) {
+    .comm-grid-top {
+        grid-template-columns: 1fr 1fr; /* 2 Kolom di laptop kecil */
+        padding: 2.5rem;
+    }
+    .comm-deco-img { display: none; } /* Sembunyikan gambar tengah jika sempit */
+}
+
+@media (max-width: 991px) {
+    .comm-grid-top {
+        grid-template-columns: 1fr; /* 1 Kolom di HP */
+        padding: 2rem;
+        gap: 2.5rem;
+    }
+    
+    .comm-benefit { text-align: center; }
+    .comm-benefit h3 { justify-content: center; }
+    .benefit-list li { justify-content: flex-start; text-align: left; }
+    
+    .comm-grid-bottom {
+        flex-direction: column;
+        align-items: center; /* Rata tengah semua */
+        text-align: center;
+        padding: 2rem;
+        gap: 3rem;
+    }
+    
+    .sosmed-badges {
+        flex-direction: column; /* Tombol sosmed tumpuk di HP biar rapi */
+        width: 100%;
+    }
+    .badge-sosmed { width: 100%; justify-content: center; }
+
+    .contact-wa-area {
+        width: 100%;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .wa-buttons { text-align: center; width: 100%; }
+    
+    .wa-illustration {
+        position: relative; /* Balikin ke relative di HP */
+        right: auto; bottom: auto;
+        width: 150px;
+        transform: rotate(0);
+        margin-top: 1rem;
+    }
+}
+
+/* =========================================
+   HALAMAN CHALLENGE (NEW)
+   ========================================= */
+
+   .challenge-page {
+    padding: 140px 5% 6rem;
+    background: #F4FBF4; /* Background mint sangat muda */
+    min-height: 100vh;
+}
+
+.chall-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #004D40;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.text-green-dark { color: #2E7D32; }
+
+.chall-desc {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+}
+
+.section-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #455A64;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* --- GRID MEKANISME --- */
+.mech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.mech-card {
+    border-radius: 25px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.mech-card:hover { transform: translateY(-5px); }
+
+/* Gradasi Kartu */
+.bg-orange-gradient { background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); }
+.bg-green-gradient  { background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); }
+.bg-blue-gradient   { background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); }
+
+.day-badge {
+    display: inline-block;
+    background: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.mech-card img {
+    height: 80px;
+    display: block;
+    margin-bottom: 1rem;
+    mix-blend-mode: multiply;
+}
+
+.mech-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: #333;
+}
+
+.mech-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mech-card li {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* --- BOTTOM SECTION (SPLIT) --- */
+.bottom-split-section {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Kiri Gambar, Kanan Konten */
+    gap: 3rem;
+    align-items: center;
+}
+
+.bottom-illustration img {
+    width: 100%;
+    max-width: 400px;
+    mix-blend-mode: multiply;
+}
+
+.rewards-area {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Kotak Reward */
+.reward-box {
+    background-color: #F1F8E9; /* Hijau muda */
+    border: 2px solid #AED581;
+    border-radius: 25px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.reward-text h3 {
+    color: #33691E;
+    margin-bottom: 0.5rem;
+}
+.reward-text p {
+    color: #558B2F;
+    font-size: 0.95rem;
+}
+.reward-box img {
+    width: 250px;
+    mix-blend-mode: multiply;
+}
+
+/* Sosmed Grid */
+.challenge-socials h4 {
+    margin-bottom: 1rem;
+    color: #37474F;
+}
+
+.social-grid-mini {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.btn-socmed {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+.btn-socmed:hover { opacity: 0.9; transform: scale(1.02); }
+
+.tiktok { background-color: #000000; } 
+/* (Warna IG, Twitter, WA ambil dari style sebelumnya) */
+
+/* --- RESPONSIVE CHALLENGE --- */
+@media (max-width: 991px) {
+    .mech-grid {
+        grid-template-columns: 1fr; /* Kartu mekanisme tumpuk di HP */
+    }
+
+    .bottom-split-section {
+        grid-template-columns: 1fr; /* Tumpuk gambar & reward */
+        text-align: center;
+    }
+
+    .bottom-illustration {
+        order: 2; /* Gambar pindah ke bawah */
+        display: flex;
+        justify-content: center;
+    }
+    
+    .reward-box {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .social-grid-mini {
+        grid-template-columns: 1fr; /* Tombol sosmed full width di HP */
+    }
+}
+
+/* --- UPDATE TAMBAHAN (MARGIN) --- */
+.mt-3 {
+    margin-top: 1.5rem; /* Memberi jarak antara kotak sosmed dan tombol baru */
+    display: block;      /* Agar tombol mengisi lebar penuh (jika pakai <a>) */
+    text-align: center;  /* Teks rata tengah */
+}
+
+/* --- TAMBAHAN CSS UNTUK EMOJI CHALLENGE --- */
+
+.mech-emoji {
+    font-size: 4rem; /* Ukuran emoji besar (sekitar 64px) */
+    text-align: center; /* Posisi di tengah */
+    margin-bottom: 1rem; /* Jarak ke judul di bawahnya */
+    line-height: 1;
+    /* Opsional: Tambah bayangan sedikit biar lebih 'pop' */
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+/* HAPUS atau KOMENTARI style gambar yang lama jika masih ada */
+/* .mech-card img {
+    height: 80px;
+    display: block;
+    margin-bottom: 1rem;
+    mix-blend-mode: multiply;
+} */
