@@ -461,6 +461,7 @@ ul { list-style: none; }
     width: 100%;
     border: none;
     cursor: pointer;
+    text-align: center;
     margin-top: 0.5rem;
 }
 
@@ -1797,9 +1798,9 @@ ul { list-style: none; }
 
 .btn-full {
     width: 100%;
-    text-align: center;
     margin-top: 0.5rem;
     font-size: 1.1rem;
+    text-align: center;
     padding: 14px;
 }
 
@@ -2160,4 +2161,5 @@ ul { list-style: none; }
     mix-blend-mode: multiply;
 
 } */
+
 
