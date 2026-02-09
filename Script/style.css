@@ -459,6 +459,7 @@ ul { list-style: none; }
 
 .btn-full {
     width: 100%;
+   text-align: center;
     border: none;
     cursor: pointer;
     margin-top: 0.5rem;
@@ -2157,4 +2158,5 @@ ul { list-style: none; }
     display: block;
     margin-bottom: 1rem;
     mix-blend-mode: multiply;
+
 } */
